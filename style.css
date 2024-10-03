@@ -1,0 +1,156 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #555;
+}
+
+/* Logo Image */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logo-container img {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+/* Search Section */
+.search-section {
+    margin: 20px 0;
+}
+
+#search-bar,
+#filter {
+    padding: 10px;
+    font-size: 1rem;
+    margin: 5px;
+    width: 300px;
+}
+
+/* Grid de Videos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.video-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-item h3 {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.video-meta {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.author-thumbnail {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.meta-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-name {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.video-duration {
+    font-size: 0.7rem;
+    color: #777;
+}
+
+/* Eliminar el subrayado y color azul en los enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 425px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #search-bar,
+    #filter {
+        width: 80%;
+    }
+}
+
+@media (max-width: 320px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

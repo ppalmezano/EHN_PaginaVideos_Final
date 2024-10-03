@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <style>/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #555;
+}
+
+/* Logo Image */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logo-container img {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+/* Search Section */
+.search-section {
+    margin: 20px 0;
+}
+
+#search-bar,
+#filter {
+    padding: 10px;
+    font-size: 1rem;
+    margin: 5px;
+    width: 300px;
+}
+
+/* Grid de Videos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.video-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-item h3 {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.video-meta {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.author-thumbnail {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.meta-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-name {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.video-duration {
+    font-size: 0.7rem;
+    color: #777;
+}
+
+/* Eliminar el subrayado y color azul en los enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 425px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #search-bar,
+    #filter {
+        width: 80%;
+    }
+}
+
+@media (max-width: 320px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
+        </head>
+        <body>
+            
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming de Videos</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+    <!-- Logo del Sitio -->
+    <div class="logo-container">
+        <img src="https://i.postimg.cc/VvGP91Rh/EHN-LOGO.png" alt="Logo del Sitio">
+    </div>
+
+    <!-- Título Central -->
+    <header class="header">
+        <h1>Bienvenido a Nuestro Streaming de Videos</h1>
+    </header>
+
+    <!-- Buscador Central -->
+    <section class="search-section">
+        <input type="text" id="search-bar" placeholder="Buscar videos..." onkeyup="filterVideos()">
+        <select id="filter" onchange="filterVideos()">
+            <option value="all">Filtrar por categoría</option>
+            <option value="Enseñanza_Bíblica">Enseñanza Bíblica</option>
+            <option value="Noticias_Cristianas">Noticias Cristianas</option>
+            <option value="Temas_Variados">Temas Variados</option>
+            <option value="Películas">Películas</option>
+            <option value="Jóvenes">Jóvenes</option>
+            <option value="Niños">Niños</option>
+        </select>
+    </section>
+
+    <!-- Grid de Videos -->
+    <section class="video-grid" id="video-grid">
+        <!-- Video 7 -->
+        <div class="video-link URLVIDEO">
+            <a href="https://www.youtube.com/watch?v=TMFrjWbmSm0" target="_blank">
+                <div class="video-item Enseñanza_Bíblica">
+                    <img src="https://i.postimg.cc/nrcGbtJp/2-DE-OCTUBRE-2024.jpg" alt="Video 7" class="thumbnail">
+                    <div class="video-info">
+                        <h3>NOTICIA DE ÚLTIMA HORA: Irán ataca a Israel</h3>
+                        <div class="video-meta">
+                            <img src="https://i.postimg.cc/CLRzsYym/QUE-DICE-LA-BIBLIA-Canal-de-You-Tube.jpg" alt="Autor" class="author-thumbnail">
+                            <div class="meta-text">
+                                <p class="channel-name">Qué dice la Biblia</p>
+                                <p class="video-duration">17min:15seg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Video 6 -->
+        <div class="video-link URLVIDEO">
+            <a href="https://www.youtube.com/watch?v=TMFrjWbmSm0" target="_blank">
+                <div class="video-item Enseñanza_Bíblica">
+                    <img src="https://i.postimg.cc/nrcGbtJp/2-DE-OCTUBRE-2024.jpg" alt="Video 6" class="thumbnail">
+                    <div class="video-info">
+                        <h3>NOTICIA DE ÚLTIMA HORA: Irán ataca a Israel</h3>
+                        <div class="video-meta">
+                            <img src="https://i.postimg.cc/CLRzsYym/QUE-DICE-LA-BIBLIA-Canal-de-You-Tube.jpg" alt="Autor" class="author-thumbnail">
+                            <div class="meta-text">
+                                <p class="channel-name">Qué dice la Biblia</p>
+                                <p class="video-duration">17min:15seg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Video 5 -->
+        <div class="video-link URLVIDEO">
+            <a href="https://www.youtube.com/watch?v=88zxbqpppZM" target="_blank">
+                <div class="video-item Enseñanza_Bíblica">
+                    <img src="https://i.postimg.cc/0Q6VXwpP/27-DE-SEPTIEMBRE.jpg" alt="Video 5" class="thumbnail">
+                    <div class="video-info">
+                        <h3>EL CUERNO PEQUEÑO: El papado en la profecía</h3>
+                        <div class="video-meta">
+                            <img src="https://i.postimg.cc/3wXy0BMh/LOGOSTV-Canal-de-You-Tube.png" alt="Autor" class="author-thumbnail">
+                            <div class="meta-text">
+                                <p class="channel-name">Logos TV</p>
+                                <p class="video-duration">21min:08seg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Video 4 -->
+        <div class="video-link URLVIDEO">
+            <a href="https://www.youtube.com/watch?v=zXg2TzBeE6U" target="_blank">
+                <div class="video-item Enseñanza_Bíblica">
+                    <img src="https://i.postimg.cc/W3fS70S6/3-DE-OCTUBRE.jpg" alt="Video 4" class="thumbnail">
+                    <div class="video-info">
+                        <h3>La Basílica de San Juan de Letrán: 5 Minutos en la Historia de la Iglesia</h3>
+                        <div class="video-meta">
+                            <img src="https://i.postimg.cc/dt5gwPLP/MINISTERIOS-LIGONIER-Canal-de-You-Tube.jpg" alt="Autor" class="author-thumbnail">
+                            <div class="meta-text">
+                                <p class="channel-name">Ministerios Ligonier</p>
+                                <p class="video-duration">5min:03seg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Video 3 -->
+        <div class="video-link Enseñanza_Biblica">
+            <a href="https://www.youtube.com/watch?v=_v-wTAojnX8" target="_blank">
+                <div class="video-item Enseñanza_Biblica">
+                    <img src="https://i.postimg.cc/yx6m2jYS/29-DE-SEPTIEMBRE.jpg" alt="Video 3" class="thumbnail">
+                    <div class="video-info">
+                        <h3>Exiliados con propósito | Daniel 1 | Salvador Gómez Dickson</h3>
+                        <div class="video-meta">
+                            <img src="https://i.postimg.cc/fT4RKtxy/IBSJ-Canal-de-You-Tube.jpg" alt="Autor" class="author-thumbnail">
+                            <div class="meta-text">
+                                <p class="channel-name">Iglesia Bíblica del Señor Jesucristo</p>
+                                <p class="video-duration">56min:38seg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Video 2 -->
+        <div class="video-link Enseñanza_Biblica">
+            <a href="https://www.youtube.com/watch?v=W637VcHF-pw" target="_blank">
+                <div class="video-item Enseñanza_Biblica">
+                    <img src="https://i.postimg.cc/SRjXWvxV/18-DE-SEPTIEMBRE.jpg" alt="Video 2" class="thumbnail">
+                    <div class="video-info">
+                        <h3>DÍA DEL SEÑOR: Apocalipsis y Jesús en la política moderna</h3>
+                        <div class="video-meta">
+                            <img src="https://i.postimg.cc/q7W9S9jc/PROYECTO-BIBLIA-Canal-de-You-Tube.jpg" alt="Autor" class="author-thumbnail">
+                            <div class="meta-text">
+                                <p class="channel-name">Proyecto Biblia</p>
+                                <p class="video-duration">42min:32seg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Video 1 -->
+        <div class="video-link Enseñanza_Biblica">
+            <a href="https://www.youtube.com/watch?v=oZrX26-mGvg" target="_blank">
+                <div class="video-item Enseñanza_Biblica">
+                    <img src="https://i.postimg.cc/76ZbkW0D/3-DE-OCTUBRE.jpg" alt="Video 1" class="thumbnail">
+                    <div class="video-info">
+                        <h3>DE LA BIBLIA A LA VIDA: ¿Cómo se relacionan la fe y las obras del creyente?</h3>
+                        <div class="video-meta">
+                            <img src="https://i.postimg.cc/25DQt3rz/COALICI-N-POR-EL-EVANGELIO-Canal-de-You-Tube.jpg" alt="Autor" class="author-thumbnail">
+                            <div class="meta-text">
+                                <p class="channel-name">Coalición por el Evangelio</p>
+                                <p class="video-duration">17min:10seg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- FIN DE LA GRID -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Streaming de Videos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+
+            <script>// Función para filtrar videos
+function filterVideos() {
+    const searchInput = document.getElementById('search-bar').value.toLowerCase();
+    const filterCategory = document.getElementById('filter').value;
+    const videoGrid = document.getElementById('video-grid');
+    const videos = videoGrid.getElementsByClassName('video-item');
+
+    for (let i = 0; i < videos.length; i++) {
+        const videoTitle = videos[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+        const videoCategory = videos[i].classList.contains(filterCategory) || filterCategory === 'all';
+        
+        if (videoTitle.includes(searchInput) && videoCategory) {
+            videos[i].parentElement.style.display = 'block';
+        } else {
+            videos[i].parentElement.style.display = 'none';
+        }
+    }
+}
+</script>
+        
+    
+</body>
